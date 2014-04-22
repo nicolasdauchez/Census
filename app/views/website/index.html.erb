@@ -1,0 +1,23 @@
+<div style="text-align: center">
+	<h1>Census</h1>
+	<h2>People Finder</h2>
+	<p>
+		When a disaster happens, everybody needs to find relatives quickly!
+	</p>
+	<hr>
+	<p>
+		<%= link_to "I am looking for someone »", search_path,{
+		:class=>"btn btn-primary btn-lg", :role=>"button" } %>
+		<%= link_to "I have information about someone »", add_path,{
+		:class=>"btn btn-primary btn-lg", :role=>"button" } %>
+
+		<!--
+		<a href="#" class="btn btn-primary btn-lg" role="button">I am looking for someone »</a>
+		<a href="#" class="btn btn-primary btn-lg" role="button">I have information about someone »</a>
+		-->
+	</p>
+	<hr>
+	<p>
+		<%= image_tag("world-map.jpg", :alt => "World map image") %>
+	</p>
+</div>

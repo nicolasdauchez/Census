@@ -1,0 +1,48 @@
+<%= javascript_include_tag 'add' %>
+<h2>
+	Inserting information about someone
+</h2>
+<hr>
+<div id="add_people_form" style="font-size: initial">
+	<%= form_for @people, url: create_path do |z| %>
+		<table>
+			<tr>
+				<td><%= z.label :firstname %></td>
+				<td><%= z.text_field :firstname %></td>
+			</tr>
+			<tr>
+				<td><%= z.label :lastname %></td>
+				<td><%= z.text_field :lastname %></td>
+			</tr>
+			<tr>
+				<td><%= z.label :sex %></td>
+				<td>
+					<%= z.select :sex, [['Woman', 'woman'], ['Man', 'man']]  %>
+				</td>
+			</tr>
+			<tr>
+				<td><%= z.label :age %></td>
+				<td><%= z.text_field :age %></td>
+			</tr>
+			<tr>
+				<td><%= z.label :adress_street %></td>
+				<td><%= z.text_field :adress_street %></td>
+			</tr>
+			<tr>
+				<td><%= z.label :adress_city %></td>
+				<td><%= z.text_field :adress_city %></td>
+			</tr>
+			<tr>
+				<td><%= z.label :state %></td>
+				<td><%= z.text_field :state %></td>
+			</tr>
+			<tr>
+				<td><%= z.label :description %></td>
+				<td><%= z.text_area :description, size: "35x4" %></td>
+			</tr>
+			<tr>
+				<td><%= z.submit "Create" %></td>
+			</tr>
+		</table>	
+	<% end %>
+</div>
