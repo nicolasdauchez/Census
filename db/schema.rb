@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140423212851) do
+ActiveRecord::Schema.define(version: 20140424170744) do
 
   create_table "assignements", force: true do |t|
     t.integer  "module_classes_key"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20140423212851) do
 
   create_table "module_classes", force: true do |t|
     t.string   "name"
+    t.integer  "lecturer_key"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -69,6 +70,8 @@ ActiveRecord::Schema.define(version: 20140423212851) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "status",                 default: 0
+    t.string   "name",                   default: ""
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
