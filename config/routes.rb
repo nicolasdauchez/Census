@@ -1,6 +1,4 @@
 Census::Application.routes.draw do
-  get "people_finder/people_search"
-  get "people_finder/people_new_found"
   devise_for :users
   get "website/index" # , :to => "intranet#index"
   # The priority is based upon order of creation: first created -> highest priority.
@@ -10,9 +8,6 @@ Census::Application.routes.draw do
   root 'website#index'
 
   match "/about", :to => "website#about", :via => [:get]
-  match "/search", :to => "people_finder#people_search", :via => [:get]
-  match "/add", :to => "people_finder#people_new_found", :via => [:get]
-  match "/create", :to => "people_finder#create", :via => [:post]
   
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
