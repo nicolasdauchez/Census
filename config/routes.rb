@@ -2,7 +2,7 @@ Census::Application.routes.draw do
   get "people_finder/people_search"
   get "people_finder/people_new_found"
   devise_for :users
-  get "website/index"
+  get "website/index" # , :to => "intranet#index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

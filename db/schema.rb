@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20140424170744) do
 
   create_table "module_classes", force: true do |t|
     t.string   "name"
+    t.integer  "lecturer_key"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
