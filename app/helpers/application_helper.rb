@@ -1,6 +1,6 @@
 module ApplicationHelper
   def titleByDefault
-    @title="Census - Humanitarian natural disaster victim finder application"
+    @title="Intranet - Where students and lecturers meet"
   end
 
   def flash_class(level)
