@@ -30,19 +30,8 @@ ActiveRecord::Schema.define(version: 20140425222740) do
   end
 
   create_table "module_students", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "people", force: true do |t|
-    t.string   "firstname"
-    t.string   "lastname"
-    t.string   "sex"
-    t.integer  "age"
-    t.string   "adress_street"
-    t.string   "adress_city"
-    t.string   "state"
-    t.string   "description"
+    t.integer  "user_id"
+    t.integer  "module_classes_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -51,13 +40,6 @@ ActiveRecord::Schema.define(version: 20140425222740) do
     t.integer  "assignement_key"
     t.integer  "student_key"
     t.integer  "note"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "results", force: true do |t|
-    t.integer  "key_student"
-    t.float    "result"
     t.boolean  "grade"
     t.datetime "created_at"
     t.datetime "updated_at"

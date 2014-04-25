@@ -1,11 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  id: 1
   module_classes_key: 1
   name: MyString
   subject: MyText
 
 two:
+  id: 0
   module_classes_key: 1
   name: MyString
   subject: MyText

@@ -3,9 +3,11 @@
 one:
   assignement_key: 1
   student_key: 1
-  note: 1
+  note: 1.5
+  grade: false
 
 two:
   assignement_key: 1
   student_key: 1
-  note: 1
+  note: 75
+  grade: true
