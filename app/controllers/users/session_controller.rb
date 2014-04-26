@@ -11,4 +11,10 @@ def create
   print "Devise Create Controller\n"
 
 end
+
+def edit
+  super
+  print "Devise Edit Controller\n"
+end
+
 end
