@@ -1,18 +1,26 @@
 class WebsiteController < ApplicationController
   
   def index
+    @welcomeStr = ""
     if current_user
+      @welcomeStr = "You have <span style='color:red;'>"
       if current_user.status == 0
-        print "Users Students"
+        @welcomeStr += "student"
       elsif current_user.status == 1
-        print "Users teacher"
+        @welcomeStr += print "lecturer"
       elsif current_user.status == 2
-        print "Users admin"
+        @welcomeStr += print "admin"
       else
-        print "Users Uknown"
+        @welcomeStr += "unknown"
       end
+      @welcomeStr += "</span>'s rights."
+    else
+      @welcomeStr += "Please " \
+      + view_context.link_to("login", new_user_session_path) \
+      + " to access Intranet's ressources."
     end
-    print "test"
+    
+
   end
 
   def about
