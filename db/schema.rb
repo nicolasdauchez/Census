@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140424170744) do
+ActiveRecord::Schema.define(version: 20140425222740) do
 
   create_table "assignements", force: true do |t|
     t.integer  "module_classes_key"
@@ -24,19 +24,14 @@ ActiveRecord::Schema.define(version: 20140424170744) do
   create_table "module_classes", force: true do |t|
     t.string   "name"
     t.integer  "lecturer_key"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "people", force: true do |t|
-    t.string   "firstname"
-    t.string   "lastname"
-    t.string   "sex"
-    t.integer  "age"
-    t.string   "adress_street"
-    t.string   "adress_city"
-    t.string   "state"
-    t.string   "description"
+  create_table "module_students", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "module_classes_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -45,13 +40,6 @@ ActiveRecord::Schema.define(version: 20140424170744) do
     t.integer  "assignement_key"
     t.integer  "student_key"
     t.integer  "note"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "results", force: true do |t|
-    t.integer  "key_student"
-    t.float    "result"
     t.boolean  "grade"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -74,7 +62,7 @@ ActiveRecord::Schema.define(version: 20140424170744) do
     t.string   "name",                   default: ""
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["name"], name: "index_users_on_name", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
 end

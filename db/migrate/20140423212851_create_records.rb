@@ -4,6 +4,7 @@ class CreateRecords < ActiveRecord::Migration
       t.integer :assignement_key
       t.integer :student_key
       t.integer :note
+      t.boolean :grade
 
       t.timestamps
     end

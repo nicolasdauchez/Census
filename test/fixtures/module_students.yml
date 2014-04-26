@@ -10,16 +10,7 @@
 #two: {}
 #  column: value
 
-<% 1000.times do |n| %>
-user_<%= n %>:
-  name: <%= "user#{n}" %>
-  email: <%= "user#{n}@example.com" %>
-  id: <%= "#{n}" %>
-  encrypted_password: <%= "user#{n}" %>
-<% end %>
-
-user:
-  name: "admin"
-  id: 1000
-  email: "admin@local.host"
-  encrypted_password: "test4242"
+module:
+  user_id: 1
+  module_classes_id: 1
+  
