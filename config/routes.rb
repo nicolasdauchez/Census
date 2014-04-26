@@ -1,6 +1,16 @@
 Census::Application.routes.draw do
-  devise_for :users
+#  devise_for :users
+
+  # devise_scope :user do
+  #   get 'users/sign_up' => 'users/registrations#new', :as => :new_user_registration
+  #   post 'users/sign_up' => 'users/registrations#create'
+  #   post 'users/sign_in' => 'users/session#create'
+  # end
+devise_for :user, :controllers  => { :registrations => "users/registrations", :sessions => "users/session" }
+#devise_for :user, :controllers  => { :sessions => "users/session" }
+  
   get "website/index" # , :to => "intranet#index"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -8,7 +18,8 @@ Census::Application.routes.draw do
   root 'website#index'
 
   match "/about", :to => "website#about", :via => [:get]
-  
+
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
