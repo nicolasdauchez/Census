@@ -7,11 +7,12 @@ Census::Application.routes.draw do
   #   post 'users/sign_in' => 'users/session#create'
   # end
 
-  devise_for :users, :path_prefix => "my"
-  resources :users
+#  devise_for :users, :path_prefix => "my"
+ # resources :users
 
 #  devise_for :user, :controllers  => { :registrations => "users/registrations", :sessions => "users/session" }
-#devise_for :user, :controllers  => { :sessions => "users/session" }
+devise_for :user, :controllers  => { :registrations => "users/registrations", :sessions => "users/sessions" }
+
   match 'module/', :to => 'modules#show', :via => [:get]
   match 'module/show', :to => 'modules#show', :via => [:get]
   match 'module/list', :to => 'modules#list', :via => [:get]
