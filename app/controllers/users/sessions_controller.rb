@@ -1,5 +1,5 @@
 
-class Users::SessionController < Devise::SessionsController
+class Users::SessionsController < Devise::SessionsController
 
 def new
   super

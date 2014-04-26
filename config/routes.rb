@@ -6,7 +6,7 @@ Census::Application.routes.draw do
   #   post 'users/sign_up' => 'users/registrations#create'
   #   post 'users/sign_in' => 'users/session#create'
   # end
-devise_for :user, :controllers  => { :registrations => "users/registrations", :sessions => "users/session" }
+devise_for :user, :controllers  => { :registrations => "users/registrations", :sessions => "users/sessions" }
 #devise_for :user, :controllers  => { :sessions => "users/session" }
   
   get "website/index" # , :to => "intranet#index"
